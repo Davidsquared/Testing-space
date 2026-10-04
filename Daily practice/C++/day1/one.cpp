@@ -15,6 +15,8 @@ int main() {
     string fullName, department;
     int age, level;
     float  GPA;
+    float course1Score, course2Score, course3Score;
+    
     //Collecting User Details.
     cout<<"Hi, we would be having a little questionaire"<<endl;
     cout<<"___________________________________________________"<<endl;
@@ -28,7 +30,39 @@ int main() {
     cin>>GPA;
     cout<<"Enter your Level: "<<endl;
     cin>>level;
+
+    //Bonus challenge: Add a average calculator.
+    cout<<"Enter first course's score: "<<endl;
+    cin>>course1Score;
+    cout<<"Enter second course's score: "<<endl;
+    cin>>course2Score;
+    cout<<"Enter Third course's score: "<<endl;
+    cin>>course3Score;
+    float averageScore;
+    string comments;
+    averageScore = (course1Score + course2Score, course3Score)/3;
+    if (averageScore<=100 || averageScore >= 70) {
+        comments = "Excellent";
+    }
+    else if (averageScore<=69 || averageScore >= 60) {
+        comments = "Very Good";
+    }
+    else if (averageScore<=59 || averageScore >= 50) {
+        comments = "Good";
+    }
+    else if (averageScore<=49 || averageScore >= 40) {
+        comments = "Pass";
+    }
+    else if (averageScore<=39 || averageScore >= 0) {
+        comments = "Fail";
+    }
+    else {
+        comments = "Matrix calculations include errors";
+    }
+
+    //Printing out outputs
     printingUserDetails(fullName, department,age,GPA,level);
+    cout<<"Comments: "<<comments<<endl;
     //Signal that no errors were exprienced
     return 0;
 }
